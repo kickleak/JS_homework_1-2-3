@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+"use strict";
+/* 
+//Заднание 1:
+    
+let a = 1, b = 1, c, d;
+c = ++a;  // вначале префиксный инкримент увеличивает число, а потом происходит присванивание 
+alert(c); // ответ: 2
+//пример 2
+d = b++; // значение остаеться таким же потому, что постинкримент вначале присваивает значение и только после увеличит его на 1
+alert(d); //ответ: 1
+//пример 3
+c = 2 + ++a; 
+alert(c); //ответ: 5
+//пример 4
+d = 2 + b++;
+alert(d); //ответ: 4
+alert(a); //3
+alert(b); //3 
+
+
+// Задание 2: Чему будут равны переменные x и a в примере ниже? Написать почему так произошло (описать последовательность действий).
+let a = 2;
+let x = 1 + (a *= 2);
+// 1. Выпоняется действие в скобках, тк  у оператора группировки самый высокий приоритет 
+// 2. Сложение-присваивание даст (a *= 2) -> (a = a * 2) -> a= 4
+// 3. следующим выполниться сложение, тк у него выше приоритет, чем у присваивания x = 1+4;
+
+//Задание 3:
+//Объявить две переменные a и b и задать им целочисленные произвольные начальныезначения. Затем написать скрипт, который работает 
+//по следующему принципу: - если a и b положительные, вывести их разность (ноль можно считать положительным числом);
+                        //- если а и b отрицательные, вывести их произведение;
+                        //- * (этот пункт по сложнее, делайте по желанию) если а и b разных знаков, вывести их сумму;
+
+let a = -4; 
+let b = 7;
+if(a >= 0 && b >= 0){
+    console.log(a - b);
+
+}else if(a < 0 && b < 0){ 
+    console.log(a * b)
+
+}else if((a >= 0 && b < 0) || (a < 0 && b >= 0)){
+    console.log(a + b)
+}
+
+//Задание 4:Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя параметрами. 
+//Т.е. например, функция для сложения должна принимать два числа, складывать их и возвращать результат.
+//Обязательно использовать оператор return.
+
+
+
+function addition(digitOne, digitTwo){
+    let calculation = digitOne + digitTwo;
+    return calculation;
+}
+function subtraction(digitOne, digitTwo){
+    let calculation = digitOne - digitTwo;
+    return calculation;
+}
+function multiplication(digitOne, digitTwo){
+    let calculation = digitOne * digitTwo;
+    return calculation;
+}
+function division(digitOne, digitTwo){
+    let calculation = digitOne / digitTwo;
+    return calculation;
+}
+*/
+/* Задание 6: Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+переданного значения операции (использовать switch) выполнить одну из арифметических
+операций (использовать функции из задания 4) и вернуть полученное значение.
+
+
+function mathOperation(arg1, arg2, operation){
+    switch(operation){
+        case 'add': 
+        alert(addition(arg1, arg2));
+        break;
+
+        case 'subtract': 
+        alert(subtraction(arg1, arg2));
+        break;
+
+        case 'multiply': 
+        alert(multiplication(arg1, arg2));
+        break;
+
+        case 'divide': 
+        alert(division(arg1, arg2));
+        break;
+
+        default:
+        alert( "Нет таких значений" );
+        break;
+    }    
+}
+
+    let digit1 = Number(prompt("Введите первое число"));
+    let digit2 = Number(prompt("Введите второе число"));
+    let whichOperation = prompt("Выберети арифметическое действие: 'add', 'subtract', 'multiply', 'devide'");
+    mathOperation(digit1, digit2, whichOperation) */
+
+
+ /* Задание 6**. (Это задание не является частью курса, можете его не делать, оно для тех кому мало
+обычных заданий, требует времени и возможно гугления, делайте по желанию.)
+Программа должна спросить у пользователя число, это будет количество денег, которое он хочет
+положить на счет в банке. Затем программа должна выдать примерно такое сообщение:
+"Ваша сумма в 101 рубль успешно зачислена." - в случае если пользователь ввел 101
+"Ваша сумма в 10020 рублей успешно зачислена." - в случае если пользователь ввел 10020
+"Ваша сумма в 120104 рубля успешно зачислена." - в случае если пользователь ввел 120104
+То есть ваша задача выводить слово «рубль» в правильном падеже, в зависимости от введенного
+числа. */
+
+
+function depositMoney(){
+    let howMuch = prompt("Сколько кладем на счёт?");
+
+    if((howMuch[howMuch.length - 2])){
+        alert(`Ваша сумма в ${howMuch} рублей успешно зачислена.`);
+    }else{
+
+        switch(howMuch[howMuch.length - 1]){
+            case '1':
+            alert(`Ваша сумма в ${howMuch} рубль успешно зачислена.`);
+            break;
+
+            case '2':
+            case '3':
+            case '4':
+            alert(`Ваша сумма в ${howMuch} рубля успешно зачислена.`);
+            break;
+            
+            case '0':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+            alert(`Ваша сумма в ${howMuch} рублей успешно зачислена.`);
+            break;
+
+        }
+    }    
+}
+
+depositMoney();
+        
+
+
+</script>
+</body>
+</html>
